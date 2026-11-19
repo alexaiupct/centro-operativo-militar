@@ -1,4 +1,4 @@
-const CACHE = "c2-operativo-v1";
+const CACHE = "c2-operativo-v2";
 const BASE = new URL("./", self.location).pathname;
 const FILES = [
   BASE,
