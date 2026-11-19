@@ -1,5 +1,13 @@
 const CACHE = "c2-operativo-v1";
-const FILES = ["/", "/index.html", "/style.css", "/app.js", "/manifest.json", "/icon.svg"];
+const BASE = new URL("./", self.location).pathname;
+const FILES = [
+  BASE,
+  `${BASE}index.html`,
+  `${BASE}style.css`,
+  `${BASE}app.js`,
+  `${BASE}manifest.json`,
+  `${BASE}icon.svg`,
+];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES)));
@@ -19,6 +27,8 @@ self.addEventListener("fetch", event => {
   const url = new URL(event.request.url);
   if (event.request.method !== "GET" || url.pathname.startsWith("/api/")) return;
   event.respondWith(
-    fetch(event.request).catch(() => caches.match(event.request).then(value => value || caches.match("/")))
+    fetch(event.request).catch(() =>
+      caches.match(event.request).then(value => value || caches.match(`${BASE}index.html`))
+    )
   );
 });

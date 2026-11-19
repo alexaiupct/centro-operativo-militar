@@ -23,8 +23,8 @@ async function loadJson(url) {
   }
 
   const fallback = url.endsWith("incidentes")
-    ? "/data/incidentes.json"
-    : "/data/responsables.json";
+    ? "./data/incidentes.json"
+    : "./data/responsables.json";
   const response = await fetch(fallback);
   if (!response.ok) throw new Error(`No se pudo cargar ${fallback}`);
   return response.json();
@@ -43,7 +43,7 @@ async function initialize() {
   startMission();
 
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/sw.js").catch(() => {});
+    navigator.serviceWorker.register("./sw.js").catch(() => {});
   }
 }
 
