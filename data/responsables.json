@@ -1,0 +1,53 @@
+{
+  "responsables": [
+    {
+      "nombre": "Jefe de Seguridad",
+      "area": "Seguridad perimetral",
+      "telefono": "1001",
+      "turno": "24 h",
+      "respuesta": "Recibido. Voy a revisar el perímetro y restableceré el sector."
+    },
+    {
+      "nombre": "Mantenimiento General",
+      "area": "Instalaciones y agua",
+      "telefono": "1002",
+      "turno": "24 h",
+      "respuesta": "Comprendido. Voy a aislar la avería y repararé el suministro."
+    },
+    {
+      "nombre": "Control de Comunicaciones",
+      "area": "Radio y telecomunicaciones",
+      "telefono": "1003",
+      "turno": "Tarde",
+      "respuesta": "Recibido. Conmutaré las comunicaciones a la vía secundaria."
+    },
+    {
+      "nombre": "Responsable Sanitario",
+      "area": "Emergencias médicas",
+      "telefono": "1004",
+      "turno": "24 h",
+      "respuesta": "Entendido. Voy hacia el lugar y atenderé al afectado."
+    },
+    {
+      "nombre": "Centro de Ciberseguridad",
+      "area": "Redes y sistemas",
+      "telefono": "1005",
+      "turno": "24 h",
+      "respuesta": "Recibido. Voy a contener la actividad sospechosa y preservar registros."
+    },
+    {
+      "nombre": "Jefatura de Logística",
+      "area": "Almacenes e inventarios",
+      "telefono": "1006",
+      "turno": "Mañana",
+      "respuesta": "Comprendido. Voy a verificar el inventario y reconciliar los movimientos."
+    },
+    {
+      "nombre": "Responsable de Personal",
+      "area": "Custodia y turnos",
+      "telefono": "1007",
+      "turno": "Mañana",
+      "respuesta": "Aquí no es el área correspondiente."
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "misiones": [
+    {
+      "codigo": "INC-101",
+      "categoria": "Seguridad",
+      "titulo": "Alarma perimetral activada",
+      "descripcion": "El sistema ha detectado una posible intrusión en el sector norte.",
+      "posicion": [64, 38],
+      "pasos": [
+        {
+          "titulo": "Confirmar la alerta",
+          "texto": "La alerta indica movimiento cerca de la verja. ¿Qué haces primero?",
+          "palabras_clave": ["consultar", "camaras", "sector", "norte"],
+          "opciones": [
+            "Abrir la puerta norte para revisar",
+            "Consultar las cámaras del sector norte",
+            "Activar el cierre general del recinto"
+          ],
+          "respuesta_correcta": 1
+        },
+        {
+          "titulo": "Clasificar el evento",
+          "texto": "Las cámaras muestran un panel desprendido movido por el viento.",
+          "palabras_clave": ["estructura", "estructural", "panel", "viento", "sin", "riesgo"],
+          "opciones": [
+            "Dar por hecho que hay intrusos",
+            "Ignorar la señal hasta mañana",
+            "Clasificarlo como daño estructural sin riesgo inmediato"
+          ],
+          "respuesta_correcta": 2
+        },
+        {
+          "titulo": "Restablecer el sistema",
+          "texto": "El sensor está bloqueado por el objeto caído. ¿Cuál es la acción correcta?",
+          "tipo": "llamada",
+          "responsable": "Jefe de Seguridad",
+          "palabras_clave": ["llamar", "1001", "seguridad", "perimetral"]
+        }
+      ]
+    },
+    {
+      "codigo": "INC-204",
+      "categoria": "Mantenimiento",
+      "titulo": "Fuga de agua en almacén",
+      "descripcion": "Se ha detectado agua acumulada junto a suministros eléctricos.",
+      "posicion": [132, 104],
+      "pasos": [
+        {
+          "titulo": "Asegurar el área",
+          "texto": "Hay agua cerca de una distribución eléctrica. ¿Qué prioridad tienes?",
+          "palabras_clave": ["aislar", "acceso", "cortar", "energia", "seguridad"],
+          "opciones": [
+            "Mantener el tránsito abierto",
+            "Aislar el acceso y cortar la energía de forma segura",
+            "Tocar directamente las tuberías mojadas"
+          ],
+          "respuesta_correcta": 1
+        },
+        {
+          "titulo": "Localizar la fuga",
+          "texto": "El área está aislada. ¿Cómo procedes?",
+          "tipo": "llamada",
+          "responsable": "Mantenimiento General",
+          "palabras_clave": ["llamar", "1002", "mantenimiento", "instalaciones"]
+        },
+        {
+          "titulo": "Cerrar el incidente",
+          "texto": "La fuga fue aislada y el suelo ya está seco.",
+          "palabras_clave": ["restaurar", "servicios", "registrar", "intervencion"],
+          "opciones": [
+            "Retirar la señalización antes de verificar",
+            "Restaurar los servicios y registrar la intervención",
+            "Dejar el circuito desconectado permanentemente"
+          ],
+          "respuesta_correcta": 1
+        }
+      ]
+    },
+    {
+      "codigo": "INC-309",
+      "categoria": "Comunicaciones",
+      "titulo": "Pérdida de radio interna",
+      "descripcion": "Varias salas han dejado de recibir comunicaciones internas.",
+      "posicion": [174, 48],
+      "pasos": [
+        {
+          "titulo": "Comprobar el alcance",
+          "texto": "Solo fallan determinados canales. ¿Qué verificas?",
+          "palabras_clave": ["comprobar", "estado", "red", "repetidora"],
+          "opciones": [
+            "El estado de la red y la repetidora",
+            "El nivel de batería de cada persona",
+            "Todos los documentos impresos"
+          ],
+          "respuesta_correcta": 0
+        },
+        {
+          "titulo": "Aplicar contingencia",
+          "texto": "La repetidora principal no responde, pero existe una secundaria.",
+          "tipo": "llamada",
+          "responsable": "Control de Comunicaciones",
+          "palabras_clave": ["llamar", "1003", "comunicaciones", "radio"]
+        },
+        {
+          "titulo": "Confirmar el servicio",
+          "texto": "La comunicación secundaria está operativa.",
+          "palabras_clave": ["prueba", "pruebas", "avisar", "responsable"],
+          "opciones": [
+            "Cerrar la sala de comunicaciones",
+            "Realizar pruebas y avisar al responsable",
+            "No informar del cambio"
+          ],
+          "respuesta_correcta": 1
+        }
+      ]
+    },
+    {
+      "codigo": "INC-412",
+      "categoria": "Salud",
+      "titulo": "Persona indispuesta",
+      "descripcion": "Un miembro del personal informa de mareo en el taller.",
+      "posicion": [92, 132],
+      "pasos": [
+        {
+          "titulo": "Primeros pasos",
+          "texto": "La persona está consciente. ¿Qué haces?",
+          "tipo": "llamada",
+          "responsable": "Responsable Sanitario",
+          "palabras_clave": ["llamar", "1004", "sanitario", "medico", "salud"]
+        },
+        {
+          "titulo": "Evaluar la zona",
+          "texto": "El área tiene una temperatura elevada.",
+          "palabras_clave": ["reducir", "exposicion", "calor", "vigilar", "sintomas"],
+          "opciones": [
+            "Incrementar la carga de trabajo",
+            "Reducir la exposición al calor y vigilar síntomas",
+            "Apartar toda la señalización"
+          ],
+          "respuesta_correcta": 1
+        },
+        {
+          "titulo": "Cerrar la atención",
+          "texto": "El personal sanitario ya atiende al afectado.",
+          "palabras_clave": ["documentar", "incidente", "mantener", "restringida", "area"],
+          "opciones": [
+            "Reanudar la actividad sin comprobar riesgos",
+            "Documentar el incidente y mantener restringida el área",
+            "Borrar la alerta"
+          ],
+          "respuesta_correcta": 1
+        }
+      ]
+    },
+    {
+      "codigo": "INC-518",
+      "categoria": "Ciberseguridad",
+      "titulo": "Acceso inusual detectado",
+      "descripcion": "El servidor muestra varios intentos desde una ubicación desconocida.",
+      "posicion": [178, 128],
+      "pasos": [
+        {
+          "titulo": "Contener el acceso",
+          "texto": "No hay confirmación de una intrusión activa. ¿Qué haces?",
+          "tipo": "llamada",
+          "responsable": "Centro de Ciberseguridad",
+          "palabras_clave": ["llamar", "1005", "ciberseguridad", "sistemas", "redes"]
+        },
+        {
+          "titulo": "Preservar evidencias",
+          "texto": "Se han identificado intentos repetidos. ¿Cuál es el siguiente paso?",
+          "palabras_clave": ["guardar", "conservar", "registro", "registros", "documentar", "hora"],
+          "opciones": [
+            "Borrar los registros para liberar espacio",
+            "Guardar registros y documentar la hora",
+            "Cambiar todos los equipos sin revisión"
+          ],
+          "respuesta_correcta": 1
+        },
+        {
+          "titulo": "Recuperar operaciones",
+          "texto": "La amenaza está contenida y el sistema sigue funcionando.",
+          "palabras_clave": ["restaurar", "servicios", "vigilar", "controlado"],
+          "opciones": [
+            "Volver a abrir todos los puertos",
+            "Dejar el bloqueo permanentemente activo",
+            "Restaurar los servicios controladamente y vigilar"
+          ],
+          "respuesta_correcta": 2
+        }
+      ]
+    },
+    {
+      "codigo": "INC-620",
+      "categoria": "Logística",
+      "titulo": "Inventario crítico en duda",
+      "descripcion": "No coincide la existencia de un suministro esencial.",
+      "posicion": [38, 118],
+      "pasos": [
+        {
+          "titulo": "Verificar el dato",
+          "texto": "El sistema informa menos unidades que el registro físico.",
+          "palabras_clave": ["congelar", "movimientos", "contar", "area", "almacen"],
+          "opciones": [
+            "Modificar el inventario a ojo",
+            "Solicitar más unidades sin revisar",
+            "Congelar movimientos y contar el área"
+          ],
+          "respuesta_correcta": 2
+        },
+        {
+          "titulo": "Reconciliar registros",
+          "texto": "La diferencia coincide con una entrega pendiente de registrar.",
+          "tipo": "llamada",
+          "responsable": "Jefatura de Logística",
+          "palabras_clave": ["llamar", "1006", "logistica", "almacen", "inventario"]
+        },
+        {
+          "titulo": "Confirmar disponibilidad",
+          "texto": "Los registros coinciden tras la revisión.",
+          "palabras_clave": ["reanudar", "movimientos", "avisar", "diferencias"],
+          "opciones": [
+            "Cerrar el almacén sin autorización",
+            "Reanudar movimientos y avisar si vuelven las diferencias",
+            "Ocultar el resultado"
+          ],
+          "respuesta_correcta": 1
+        }
+      ]
+    }
+  ],
+  "complicaciones": [
+        {
+          "codigo": "ALT-010",
+          "categoria": "Seguridad",
+          "titulo": "Cambio en la alerta perimetral",
+          "descripcion": "La central detecta movimiento adicional en una zona contigua.",
+          "posicion": [76, 54],
+          "pasos": [
+            {
+              "titulo": "Confirmar el nuevo movimiento",
+              "texto": "Se ha activado una segunda zona. ¿Cómo actúas?",
+              "opciones": [
+                "Abrir una salida para comprobar",
+                "Mantener el perímetro y confirmar por cámaras",
+                "Ignorar la señal secundaria"
+              ],
+              "respuesta_correcta": 1
+            }
+          ]
+        },
+        {
+          "codigo": "ALT-021",
+          "categoria": "Logística",
+          "titulo": "Acceso bloqueado",
+          "descripcion": "Una puerta interior impide el acceso al equipo operativo.",
+          "posicion": [232, 174],
+          "pasos": [
+            {
+              "titulo": "Restablecer el acceso",
+              "texto": "El control electrónico no responde desde su posición actual.",
+              "opciones": [
+                "Forzar la puerta con cualquier medio",
+                "Usar el control manual autorizado",
+                "Dejar la puerta cerrada indefinidamente"
+              ],
+              "respuesta_correcta": 1
+            }
+          ]
+        },
+        {
+          "codigo": "ALT-034",
+          "categoria": "Comunicaciones",
+          "titulo": "Interferencia en la red",
+          "descripcion": "Aparece ruido irregular en el canal de mando.",
+          "posicion": [356, 92],
+          "pasos": [
+            {
+              "titulo": "Despejar el canal",
+              "texto": "La orden puede perderse por la interferencia.",
+              "opciones": [
+                "Cambiar a una frecuencia previamente autorizada",
+                "Elevar el volumen al máximo",
+                "Continuar sin confirmar recepción"
+              ],
+              "respuesta_correcta": 0
+            }
+          ]
+        }
+  ]
+}

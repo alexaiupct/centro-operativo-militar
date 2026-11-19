@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b100c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <title>Centro Operativo Militar</title>
+</head>
+<body>
+  <header class="topbar">
+    <div><strong>S.C.I.F.</strong><span>SISTEMA CENTRAL DE INTERVENCIÓN</span></div>
+    <div id="status" class="status">SISTEMA EN ESPERA</div>
+    <div class="clock" id="clock">00:00:00</div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="side-panel">
+      <div id="incident-info" class="incident-info"></div>
+      <div id="decision" class="decision"></div>
+    </aside>
+
+    <section class="map-panel" aria-label="Mapa táctico">
+      <div class="map-toolbar">
+        <strong>VÍDEO AÉREO · SATÉLITE ÓPTICO</strong>
+        <span>BASE AÉREA · SECTOR 01</span>
+      </div>
+      <div id="map" class="map">
+        <svg id="base-map" viewBox="0 0 1000 700" role="img" aria-label="Mapa de base aérea">
+          <defs>
+            <pattern id="terrain" width="40" height="40" patternUnits="userSpaceOnUse">
+              <rect width="40" height="40" fill="#33412f"/>
+              <circle cx="8" cy="12" r="3" fill="#465943"/>
+              <circle cx="31" cy="28" r="4" fill="#273828"/>
+              <circle cx="22" cy="7" r="2" fill="#52634a"/>
+            </pattern>
+            <pattern id="concrete" width="18" height="18" patternUnits="userSpaceOnUse">
+              <rect width="18" height="18" fill="#777c73"/>
+              <path d="M0 18L18 0M18 18L36 0" stroke="#686d65" stroke-width=".8"/>
+            </pattern>
+          </defs>
+          <rect width="1000" height="700" fill="url(#terrain)"/>
+          <g opacity=".24" stroke="#b4bdab" fill="none">
+            <path d="M0 100H1000M0 200H1000M0 300H1000M0 400H1000M0 500H1000M0 600H1000"/>
+            <path d="M100 0V700M200 0V700M300 0V700M400 0V700M500 0V700M600 0V700M700 0V700M800 0V700M900 0V700"/>
+          </g>
+          <rect x="100" y="285" width="800" height="150" rx="5" fill="url(#concrete)" stroke="#d0d2c4" stroke-width="5"/>
+          <rect x="118" y="300" width="764" height="120" fill="#62675f" stroke="#92978d" stroke-width="2"/>
+          <line x1="135" y1="360" x2="865" y2="360" stroke="#ece8c8" stroke-width="4" stroke-dasharray="20 16"/>
+          <g fill="#ece8c8">
+            <rect x="145" y="320" width="36" height="8"/><rect x="245" y="320" width="36" height="8"/>
+            <rect x="345" y="320" width="36" height="8"/><rect x="445" y="320" width="36" height="8"/>
+            <rect x="545" y="320" width="36" height="8"/><rect x="645" y="320" width="36" height="8"/>
+            <rect x="745" y="320" width="36" height="8"/><rect x="145" y="392" width="36" height="8"/>
+            <rect x="245" y="392" width="36" height="8"/><rect x="345" y="392" width="36" height="8"/>
+            <rect x="445" y="392" width="36" height="8"/><rect x="545" y="392" width="36" height="8"/>
+            <rect x="645" y="392" width="36" height="8"/><rect x="745" y="392" width="36" height="8"/>
+          </g>
+          <text x="500" y="275" text-anchor="middle" fill="#eff0df" font-size="18" font-family="monospace" letter-spacing="4">PISTA 09 / 27</text>
+
+          <g fill="#777f73" stroke="#c1c7b7" stroke-width="3">
+            <rect x="680" y="80" width="210" height="115" rx="4"/>
+            <rect x="680" y="505" width="210" height="115" rx="4"/>
+            <rect x="110" y="505" width="210" height="115" rx="4"/>
+            <rect x="420" y="75" width="135" height="125" rx="4"/>
+          </g>
+          <g fill="#455044" stroke="#aab3a0" stroke-width="2">
+            <rect x="700" y="105" width="170" height="70"/>
+            <rect x="700" y="530" width="170" height="70"/>
+            <rect x="130" y="530" width="170" height="70"/>
+          </g>
+          <g fill="#4c554a" stroke="#d1d6c7">
+            <rect x="440" y="94" width="95" height="88"/>
+            <rect x="458" y="55" width="60" height="38"/>
+          </g>
+          <g fill="#ffcb45" stroke="#b78b28">
+            <circle cx="466" cy="72" r="4"/><circle cx="487" cy="72" r="4"/>
+            <circle cx="508" cy="72" r="4"/>
+          </g>
+
+          <g id="aircraft" fill="#bcc2b3" stroke="#edf0e4" stroke-width="2">
+            <g transform="translate(185 360)">
+              <polygon points="-32,0 -8,-8 -8,-22 8,-22 8,-8 32,0 8,8 8,20 -8,20 -8,8"/>
+            </g>
+            <g transform="translate(330 360)">
+              <polygon points="-32,0 -8,-8 -8,-22 8,-22 8,-8 32,0 8,8 8,20 -8,20 -8,8"/>
+            </g>
+            <g transform="translate(710 360)">
+              <polygon points="-32,0 -8,-8 -8,-22 8,-22 8,-8 32,0 8,8 8,20 -8,20 -8,8"/>
+            </g>
+          </g>
+
+          <g fill="#d7dbcf" stroke="#69745f" stroke-width="2">
+            <rect x="28" y="28" width="944" height="644" fill="none"/>
+          </g>
+          <g id="marker-layer"></g>
+        </svg>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="phone-dialog" class="phone-dialog">
+    <div class="phone">
+      <div class="phone-status"><span>09:41</span><span>▲  LTE  100%</span></div>
+      <div class="phone-screen">
+        <p id="call-state" class="call-state">SIN LLAMADA</p>
+        <div id="dial-number" class="dial-number"></div>
+        <p id="call-response" class="call-response"></p>
+        <div id="dial-view" class="dial-view">
+          <div class="keypad">
+            <button data-digit="1">1</button><button data-digit="2">2</button><button data-digit="3">3</button>
+            <button data-digit="4">4</button><button data-digit="5">5</button><button data-digit="6">6</button>
+            <button data-digit="7">7</button><button data-digit="8">8</button><button data-digit="9">9</button>
+            <button id="backspace-key">⌫</button><button data-digit="0">0</button><button id="call-key">☎</button>
+          </div>
+        </div>
+        <div id="agenda-view" class="agenda-view hidden"></div>
+      </div>
+      <nav class="phone-nav">
+        <button id="dial-tab" class="active" type="button">Marcador</button>
+        <button id="agenda-tab" type="button">Agenda</button>
+        <button id="hangup-key" class="hangup" type="button">Colgar</button>
+      </nav>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
